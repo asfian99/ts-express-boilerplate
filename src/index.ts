@@ -1,5 +1,6 @@
 import express from "express";
-import { indexController } from "./controllers/indexController";
+import { IndexController } from "./controllers/indexController";
+import { apiRoute } from "./router/apiRoute";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -10,7 +11,8 @@ const server = async () => {
   app.use(express.urlencoded({ extended: true }));
 
   // Route
-  app.get("/", indexController);
+  app.get("/", IndexController);
+  app.use("/api", apiRoute);
 
   // Listen
   app.listen(PORT, () =>

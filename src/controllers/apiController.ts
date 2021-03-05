@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 
 // Get All Controller
-export const IndexController = (_req: Request, res: Response) => {
-  res.send("Hello There");
+export const GetApiController = (_req: Request, res: Response) => {
+  res.json({ data: "This is the json data" });
 };
 
 // Get One Controller
